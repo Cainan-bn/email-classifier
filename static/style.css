@@ -33,3 +33,15 @@ button {
     padding: 20px;
     border-radius: 6px;
 }
+
+pre {
+    background-color: #1f2937;
+    color: #f9fafb;
+    padding: 16px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
