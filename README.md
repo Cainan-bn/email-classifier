@@ -1,13 +1,13 @@
 
-# 📧 AutoU – Classificador Inteligente de Emails
+# Classificador Inteligente de Emails
 
-Aplicação web desenvolvida como **desafio técnico de estágio da AutoU**, com o objetivo de classificar emails automaticamente como **Produtivo** ou **Improdutivo**, utilizando **Inteligência Artificial** e **Processamento de Linguagem Natural (NLP)**.
+Aplicação web desenvolvida como desafio técnico de estágio da AutoU, com o objetivo de classificar emails automaticamente como Produtivo ou Improdutivo, utilizando Inteligência Artificial e Processamento de Linguagem Natural (NLP).
 
-O sistema permite que qualquer usuário acesse via navegador, cole o conteúdo de um email e receba instantaneamente a classificação, **sem necessidade de instalação local**.
+O sistema permite que qualquer usuário acesse via navegador, cole o conteúdo de um email e receba instantaneamente a classificação, sem necessidade de instalação local.
 
 ---
 
-## 🚀 Demonstração
+## Demonstração
 
 🔗 **Link da aplicação (Deploy):**
 > *(será inserido após o deploy no Render)*
@@ -17,18 +17,18 @@ O sistema permite que qualquer usuário acesse via navegador, cole o conteúdo d
 
 ---
 
-## 🧠 Como funciona
+## Como funciona
 
 1. O usuário cola o texto do email na interface web
 2. O backend em **Flask (Python)** envia o texto para uma **API de IA**
 3. A IA analisa o conteúdo e classifica como:
-   - ✅ **Produtivo**
-   - ❌ **Improdutivo**
+   - ✅ Produtivo
+   - ❌ Improdutivo
 4. O resultado é exibido de forma clara na tela
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **Python 3**
 - **Flask**
@@ -40,7 +40,7 @@ O sistema permite que qualquer usuário acesse via navegador, cole o conteúdo d
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 autou-email-classifier/
@@ -68,31 +68,31 @@ Ela é armazenada:
 
 ---
 
-## ▶️ Executar Localmente
+## Executar Localmente
 
-### 1️⃣ Clonar o repositório
+### 1 Clonar o repositório
 ```bash
 git clone https://github.com/seu-usuario/autou-email-classifier.git
 cd autou-email-classifier
 ```
 
-### 2️⃣ Criar e ativar ambiente virtual
+### 2 Criar e ativar ambiente virtual
 ```bash
 python -m venv .venv
 source .venv/Scripts/activate  # Git Bash / Linux / Mac
 ```
 
-### 3️⃣ Instalar dependências
+### 3 Instalar dependências
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Criar arquivo `.env`
+### 4 Criar arquivo `.env`
 ```env
 OPENAI_API_KEY=sua_chave_aqui
 ```
 
-### 5️⃣ Executar aplicação
+### 5 Executar aplicação
 ```bash
 python app.py
 ```
@@ -104,17 +104,16 @@ http://127.0.0.1:5000
 
 ---
 
-## 🌐 Deploy
+##  Deploy
 
-A aplicação é publicada na nuvem utilizando **Render**, permitindo acesso público sem instalação local.
+A aplicação é publicada na nuvem utilizando Render, permitindo acesso público sem instalação local.
 
 ---
 
-## 👨‍💻 Autor
+##  Autor
 
 **Cainã Barros do Nascimento**  
-Desenvolvedor | Engenharia de IA | Full Stack  
-📍 Brasil
+Estudante de Desenvolvimento Full Stack /  Engenharia de IA 
 
 ---
 
@@ -126,4 +125,4 @@ Este projeto demonstra:
 - Deploy funcional em nuvem
 - Foco em experiência do usuário
 
-Desenvolvido exclusivamente para o **desafio técnico da AutoU**.
+Desenvolvido exclusivamente para o desafio técnico da AutoU.
