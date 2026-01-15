@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoU - Classificador de Emails</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>📧 Classificador Inteligente de Emails</h1>
+    <p>Cole abaixo o conteúdo do email para análise automática.</p>
+
+    <form method="POST">
+        <textarea name="email_texto" placeholder="Cole o email aqui..." required>{{ email_texto }}</textarea>
+        <br>
+        <button type="submit">Analisar Email</button>
+    </form>
+
+    {% if categoria %}
+        <div class="resultado">
+            <h2>📌 Classificação: {{ categoria }}</h2>
+
+            <h3>💬 Resposta sugerida:</h3>
+            <pre>{{ resposta }}</pre>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
