@@ -28,13 +28,16 @@ Responda APENAS com a palavra: Produtivo ou Improdutivo.
         temperature=0
     )
 
-    resultado = response.choices[0].message.content.strip()
+    
+    resultado = response.choices[0].message.content.strip().lower()
 
-    if "produtivo" in resultado:
+    if "improdutivo" in resultado:
+        return "Improdutivo"
+    elif "produtivo" in resultado:
         return "Produtivo"
     else:
-        return "Improdutivo"
-    
+        return "Não identificado"
+
 
 
 def gerar_resposta(texto_email: str, categoria: str) -> str:
