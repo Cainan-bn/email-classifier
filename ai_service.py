@@ -4,6 +4,8 @@ from openai import OpenAI
 import json
 
 load_dotenv()
+
+print("OPENAI_API_KEY existe?", bool(os.getenv("OPENAI_API_KEY")))
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
