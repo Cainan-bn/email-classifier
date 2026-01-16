@@ -1,73 +1,53 @@
+from dotenv import load_dotenv
 import os
 from openai import OpenAI
-from dotenv import load_dotenv
+import json
 
 load_dotenv()
-
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-def classificar_email(texto_email: str) -> str:
+
+def analisar_emails_em_lote(lista_emails):
+    """
+    Recebe uma lista de emails e retorna classificação e resposta para cada um
+    em uma única chamada à API.
+    """
+
+    emails_formatados = ""
+    for i, email in enumerate(lista_emails, start=1):
+        emails_formatados += f"\nEMAIL {i}:\n{email}\n"
+
     prompt = f"""
-Você é um assistente que classifica emails corporativos.
+Você é um assistente corporativo especializado em análise de emails.
 
-Classifique o email abaixo como APENAS uma das opções:
-- Produtivo
-- Improdutivo
+Tarefa:
+- Para CADA email abaixo, faça:
+  1. Classificação: "Produtivo" ou "Improdutivo"
+  2. Gere uma resposta automática adequada
 
-Email:
-\"\"\"{texto_email}\"\"\"
+Regras:
+- Retorne APENAS um JSON válido
+- Não inclua explicações fora do JSON
+- Use exatamente este formato:
 
-Responda APENAS com a palavra: Produtivo ou Improdutivo.
+[
+  {{
+    "email_id": 1,
+    "categoria": "Produtivo",
+    "resposta": "texto da resposta"
+  }}
+]
+
+Emails para análise:
+{emails_formatados}
 """
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
-        messages=[
-            {"role": "user", "content": prompt}
-        ],
+        messages=[{"role": "user", "content": prompt}],
         temperature=0
     )
 
-    
-    resultado = response.choices[0].message.content.strip().lower()
+    conteudo = response.choices[0].message.content.strip()
 
-    if "improdutivo" in resultado:
-        return "Improdutivo"
-    elif "produtivo" in resultado:
-        return "Produtivo"
-    else:
-        return "Não identificado"
-
-
-
-def gerar_resposta(texto_email: str, categoria: str) -> str:
-    if categoria == "Produtivo":
-        prompt = f"""
-Você é um assistente corporativo.
-
-Gere uma resposta profissional, clara e objetiva para o email abaixo.
-A resposta deve indicar que a solicitação foi recebida e que será analisada.
-
-Email:
-\"\"\"{texto_email}\"\"\"
-"""
-    else:
-        prompt = f"""
-Você é um assistente corporativo.
-
-Gere uma resposta educada e cordial para o email abaixo.
-A resposta não deve indicar abertura de chamado ou ação futura.
-
-Email:
-\"\"\"{texto_email}\"\"\"
-"""
-
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "user", "content": prompt}
-        ],
-        temperature=0.3
-    )
-
-    return response.choices[0].message.content.strip()
+    return json.loads(conteudo)

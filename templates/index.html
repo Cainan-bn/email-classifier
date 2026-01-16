@@ -9,22 +9,30 @@
 
 <div class="container">
     <h1>📧 Classificador Inteligente de Emails</h1>
-    <p>Cole abaixo o conteúdo do email para análise automática.</p>
+    <p>Cole múltiplos emails (um por linha, parágrafo ou enumeração) ou envie um arquivo .txt ou .pdf</p>
 
-    <form method="POST">
-        <textarea name="email_texto" placeholder="Cole o email aqui..." required>{{ email_texto }}</textarea>
-        <br>
+    <form method="POST" enctype="multipart/form-data">
+        <textarea
+            name="email_texto"
+            placeholder="Cole um ou mais emails aqui..."
+        ></textarea>
+
+        <input type="file" name="email_arquivo" accept=".txt,.pdf">
+
         <button type="submit">Analisar Email</button>
     </form>
 
-    {% if categoria %}
-        <div class="resultado">
-            <h2>📌 Classificação: {{ categoria }}</h2>
+ {% if resultados %}
+  {% for item in resultados %}
+    <div class="resultado">
+      <h2>📌 Email {{ item.email_id }} — {{ item.categoria }}</h2>
+      <pre>{{ item.resposta }}</pre>
+    </div>
+  {% endfor %}
+{% endif %}
 
-            <h3>💬 Resposta sugerida:</h3>
-            <pre>{{ resposta }}</pre>
-        </div>
-    {% endif %}
+
+
 </div>
 
 </body>
