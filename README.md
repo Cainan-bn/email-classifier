@@ -1,4 +1,4 @@
-# 📧 AutoU – Classificador Inteligente de Emails com IA
+# 📧 Classificador Inteligente de Emails com IA
 
 Projeto desenvolvido como **desafio técnico** para a AutoU, com foco em **IA aplicada, NLP, experiência do usuário e deploy em nuvem**.
 
@@ -73,7 +73,7 @@ autou-email-classifier/
 ### 1️⃣ Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/autou-email-classifier.git
+git clone https://github.com/Cainan-bn/email-classifier.git
 cd autou-email-classifier
 ```
 
@@ -99,7 +99,6 @@ Crie um arquivo `.env`:
 OPENAI_API_KEY=sua_api_key_aqui
 ```
 
-> ⚠️ **Nunca suba sua API Key para o GitHub**
 
 ---
 
@@ -120,10 +119,10 @@ http://127.0.0.1:5000
 ## 🧪 Como Usar
 
 ### ✍️ Texto direto
-Cole um ou mais emails separados por **linha em branco**.
+Cole um ou mais emails separados por **linha em branco** ou enumerados.
 
 ### 📄 Arquivo `.txt`
-Cada email deve estar separado por uma linha em branco.
+Cada email deve estar separado por uma linha em branco ou enumerados.
 
 ### 📕 Arquivo `.pdf`
 O sistema extrai o texto e processa automaticamente.
@@ -148,7 +147,7 @@ O sistema extrai o texto e processa automaticamente.
 
 ---
 
-## 👨‍💻 Autor
+##  Autor
 
 **Cainã Barros do Nascimento**  
 Estudante de Engenharia de IA & Desenvolvimento Full Stack
@@ -157,7 +156,7 @@ Estudante de Engenharia de IA & Desenvolvimento Full Stack
 
 ---
 
-## ⭐ Considerações Finais
+##  Considerações Finais
 
 Este projeto demonstra:
 
@@ -166,5 +165,5 @@ Este projeto demonstra:
 - UX simples e funcional
 - Deploy em produção
 
-💡 Ideal para avaliação técnica e portfólio profissional.
+
 
