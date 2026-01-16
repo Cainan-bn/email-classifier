@@ -1,128 +1,170 @@
+# 📧 AutoU – Classificador Inteligente de Emails com IA
 
-# Classificador Inteligente de Emails
+Projeto desenvolvido como **desafio técnico** para a AutoU, com foco em **IA aplicada, NLP, experiência do usuário e deploy em nuvem**.
 
-Aplicação web desenvolvida como desafio técnico de estágio da AutoU, com o objetivo de classificar emails automaticamente como Produtivo ou Improdutivo, utilizando Inteligência Artificial e Processamento de Linguagem Natural (NLP).
-
-O sistema permite que qualquer usuário acesse via navegador, cole o conteúdo de um email e receba instantaneamente a classificação, sem necessidade de instalação local.
-
----
-
-## Demonstração
-
-🔗 **Link da aplicação (Deploy):**
-> *(será inserido após o deploy no Render)*
-
-🎥 **Vídeo demonstrativo:**
-> *(link a ser adicionado)*
+A aplicação analisa emails (texto direto, `.txt` ou `.pdf`), **classifica cada email como Produtivo ou Improdutivo** e **gera uma resposta automática individual para cada um**, utilizando a API da OpenAI.
 
 ---
 
-## Como funciona
+## 🚀 Demonstração
 
-1. O usuário cola o texto do email na interface web
-2. O backend em **Flask (Python)** envia o texto para uma **API de IA**
-3. A IA analisa o conteúdo e classifica como:
-   - ✅ Produtivo
-   - ❌ Improdutivo
-4. O resultado é exibido de forma clara na tela
+🔗 **Link da aplicação em produção (Render):**  
+> [_https://email-classifier-fzpp.onrender.com_]
 
----
+🖼️ **Interface da aplicação:**
 
-## Tecnologias Utilizadas
-
-- **Python 3**
-- **Flask**
-- **OpenAI API**
-- **HTML5 / CSS3**
-- **Python-dotenv**
-- **Gunicorn** (produção)
-- **Render** (deploy)
-
----
-
-## Estrutura do Projeto
+> 📌 *Screenshot da interface principal*
 
 ```
+/static/screenshot-interface.png
+```
+
+---
+
+## 🧠 Funcionalidades
+
+- ✅ Classificação automática de emails com IA
+- ✅ Geração de resposta personalizada para **cada email**
+- ✅ Entrada por:
+  - Texto digitado
+  - Upload de arquivo `.txt`
+  - Upload de arquivo `.pdf`
+- ✅ Processamento em lote (vários emails de uma vez)
+- ✅ Interface web simples e intuitiva
+- ✅ Deploy em nuvem (Render)
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Python 3.10+**
+- **Flask** – backend web
+- **OpenAI API** – análise e geração de respostas
+- **pdfplumber** – leitura de PDFs
+- **HTML + CSS** – interface
+- **Render** – deploy em produção
+
+---
+
+## 📂 Estrutura do Projeto
+
+```bash
 autou-email-classifier/
 │
-├── app.py
-├── requirements.txt
-├── .gitignore
+├── app.py                 # Aplicação Flask
+├── ai_service.py          # Lógica de IA (OpenAI)
+├── requirements.txt       # Dependências
+├── .env.example           # Exemplo de variáveis de ambiente
 │
 ├── templates/
-│   └── index.html
+│   └── index.html         # Interface web
 │
 ├── static/
-│   └── style.css
+│   ├── style.css          # Estilos
+│   └── screenshot-interface.png
+│
+└── README.md
 ```
 
 ---
 
-## 🔐 Segurança
+## ⚙️ Configuração Local
 
-A chave da API da OpenAI **não é exposta no código**.
+### 1️⃣ Clone o repositório
 
-Ela é armazenada:
-- Localmente via arquivo `.env`
-- Em produção via **Environment Variables** no Render
-
----
-
-## Executar Localmente
-
-### 1 Clonar o repositório
 ```bash
 git clone https://github.com/seu-usuario/autou-email-classifier.git
 cd autou-email-classifier
 ```
 
-### 2 Criar e ativar ambiente virtual
+### 2️⃣ Crie o ambiente virtual
+
 ```bash
 python -m venv .venv
-source .venv/Scripts/activate  # Git Bash / Linux / Mac
+source .venv/bin/activate  # Linux/macOS
+.venv\Scripts\activate     # Windows
 ```
 
-### 3 Instalar dependências
+### 3️⃣ Instale as dependências
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4 Criar arquivo `.env`
+### 4️⃣ Configure a API Key
+
+Crie um arquivo `.env`:
+
 ```env
-OPENAI_API_KEY=sua_chave_aqui
+OPENAI_API_KEY=sua_api_key_aqui
 ```
 
-### 5 Executar aplicação
+> ⚠️ **Nunca suba sua API Key para o GitHub**
+
+---
+
+## ▶️ Executando o Projeto
+
 ```bash
 python app.py
 ```
 
-Acesse:
+Acesse no navegador:
+
 ```
 http://127.0.0.1:5000
 ```
 
 ---
 
-##  Deploy
+## 🧪 Como Usar
 
-A aplicação é publicada na nuvem utilizando Render, permitindo acesso público sem instalação local.
+### ✍️ Texto direto
+Cole um ou mais emails separados por **linha em branco**.
+
+### 📄 Arquivo `.txt`
+Cada email deve estar separado por uma linha em branco.
+
+### 📕 Arquivo `.pdf`
+O sistema extrai o texto e processa automaticamente.
 
 ---
 
-##  Autor
+## 🤖 Lógica de IA (Resumo)
+
+- Os emails são processados **em lote**
+- A IA retorna:
+  - Categoria (Produtivo / Improdutivo)
+  - Resposta automática adequada
+- O resultado é exibido individualmente na interface
+
+---
+
+## 📌 Observações Importantes
+
+- O projeto respeita limites de requisição da API
+- Em PDFs muito grandes, podem ocorrer erros de conexão temporários
+- Ideal para uso demonstrativo e desafios técnicos
+
+---
+
+## 👨‍💻 Autor
 
 **Cainã Barros do Nascimento**  
-Estudante de Desenvolvimento Full Stack /  Engenharia de IA 
+Estudante de Engenharia de IA & Desenvolvimento Full Stack
+
+🔗 GitHub: https://github.com/Cainan-bn
 
 ---
 
-## 🏁 Considerações Finais
+## ⭐ Considerações Finais
 
 Este projeto demonstra:
-- Integração prática com IA Generativa
-- Boas práticas de segurança
-- Deploy funcional em nuvem
-- Foco em experiência do usuário
 
-Desenvolvido exclusivamente para o desafio técnico da AutoU.
+- Integração real com API de IA
+- Boas práticas de backend
+- UX simples e funcional
+- Deploy em produção
+
+💡 Ideal para avaliação técnica e portfólio profissional.
+
