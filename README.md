@@ -8,8 +8,6 @@ A aplicação analisa emails (texto direto, `.txt` ou `.pdf`), **classifica cada
 
 ## 🚀 Demonstração
 
-🔗 **Link da aplicação em produção (Render):**  
-> [_https://email-classifier-fzpp.onrender.com_]
 
 🎥 Vídeo Demonstrativo:<br>
 👉 https://www.youtube.com/watch?v=f4n_nWzON70
