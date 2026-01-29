@@ -1,6 +1,6 @@
 # 📧 Classificador Inteligente de Emails com IA
 
-Projeto desenvolvido como **desafio técnico** para a AutoU, com foco em **IA aplicada, NLP, experiência do usuário e deploy em nuvem**.
+Projeto desenvolvido como **desafio técnico**, com foco em **IA aplicada, NLP, experiência do usuário e deploy em nuvem**.
 
 A aplicação analisa emails (texto direto, `.txt` ou `.pdf`), **classifica cada email como Produtivo ou Improdutivo** e **gera uma resposta automática individual para cada um**, utilizando a API da OpenAI.
 
@@ -156,7 +156,8 @@ O sistema extrai o texto e processa automaticamente.
 **Cainã Barros do Nascimento**  
 Estudante de Engenharia de IA & Desenvolvimento Full Stack
 
-🔗 GitHub: https://github.com/Cainan-bn
+<a href="https://www.linkedin.com/in/cainã-barros-0aaa0a282/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="40" height="40"/></a>
+
 
 ---
 
