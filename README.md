@@ -1,17 +1,10 @@
 # 📧 Classificador Inteligente de Emails com IA
 
-Projeto desenvolvido como **desafio técnico**, com foco em **IA aplicada, NLP, experiência do usuário e deploy em nuvem**.
+Projeto desenvolvido com foco em **IA aplicada, NLP, experiência do usuário e deploy em nuvem**.
 
 A aplicação analisa emails (texto direto, `.txt` ou `.pdf`), **classifica cada email como Produtivo ou Improdutivo** e **gera uma resposta automática individual para cada um**, utilizando a API da OpenAI.
 
 ---
-
-## 🚀 Demonstração
-
-
-🎥 Vídeo Demonstrativo:<br>
-👉 https://www.youtube.com/watch?v=f4n_nWzON70
-
 
 🖼️ **Interface da aplicação:**
 
